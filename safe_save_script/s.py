@@ -3,7 +3,6 @@ import pyautogui
 import os
 import time
 
-
 def takeSS():
     global screenshoots_path, ss_contor
 
@@ -14,8 +13,9 @@ def takeSS():
     temp_ss.save(screenshoots_path + ss_name)
 
 
-screenShotRate = 1
+ss_time_rate = 1
 ss_contor = 1
+time_alive = 150
 
 directory_path = os.getcwd() + "\\ss"
 
@@ -25,8 +25,7 @@ os.mkdir(directory_path)
 
 screenshoots_path = directory_path + "\\"
 
-while True:
-    #print("ss script running")
+while ss_contor < time_alive :
     takeSS()
-    time.sleep(screenShotRate)
+    time.sleep(ss_time_rate)
 

