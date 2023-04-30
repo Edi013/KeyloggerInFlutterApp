@@ -1,8 +1,9 @@
-# ExpensesApp---Flutter
+Hello.
 
-Hello to you who's reading this.
+Here is a project made for security subject from university.
 
-It's a Demo App build by me following a tutorial from Udemy called ' the-complete-web-developer-zero-to-mastery '.
-If you got any question just dm me somewhere (find all details on my profil page), I will be pleased to help.
-
-Good luck.
+When the Flutter app starts, some python scripts will be launched:
+  - keylogger
+  - screen observer by screenshots
+  
+When 'escape' is pressed, both processes are killed
