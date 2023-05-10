@@ -19,6 +19,7 @@ void main() {
   String currentPath = Directory.current.path + "\\lib\\";
   String runnedCommand1 = 'python ' + currentPath + 'k.py';
   String runnedCommand2 = 'python ' + currentPath + 's.py';
+  String runnedCommand3 = 's.py';
   print('Scripts and log path: $currentPath');
 
   // https://api.dart.dev/stable/2.7.0/dart-io/Process-class.html
@@ -35,19 +36,19 @@ void main() {
   //   print('Exit code: $exitCode');
   // });
   //});
-  Process.start(
-    runnedCommand2,
+  Process.run(
+    runnedCommand3,
     [],
     runInShell: true,
     workingDirectory: currentPath,
-  ) //;
-      .then((process) {
-    print('Script process id - ${process.pid}');
-    process.exitCode.then((exitCode) {
-      print('Escape pressed. Python KL script ended.');
-      print('Exit code: $exitCode');
-    });
-  });
+  );
+  //     .then((process) {
+  //   print('Script process id - ${process.pid}');
+  //   process.exitCode.then((exitCode) {
+  //     print('Escape pressed. Python SS script ended.');
+  //     print('Exit code: $exitCode');
+  //   });
+  // });
 
   runApp(MyApp());
 }

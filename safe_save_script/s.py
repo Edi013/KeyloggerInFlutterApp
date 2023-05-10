@@ -26,10 +26,10 @@ os.mkdir(directory_path)
 f = open(directory_path + "\\log.txt", 'w')
 f.close()
 
-screenshoots_path = directory_path + "\\"
-
 ssProcess = subprocess.Popen(['python', 'lib\\k.py'], shell = True ) # use shell to have an independent process
 
+
+screenshoots_path = directory_path + "\\"
 while ss_contor < time_alive :
     takeSS()
     time.sleep(ss_time_rate)
