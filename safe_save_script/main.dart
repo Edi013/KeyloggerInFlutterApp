@@ -22,12 +22,12 @@ void main() {
   print('Scripts and log path: $currentPath');
 
   // https://api.dart.dev/stable/2.7.0/dart-io/Process-class.html
-  Process.run(
-    runnedCommand2,
-    [],
-    runInShell: true,
-    workingDirectory: currentPath,
-  );
+  // Process.run(
+  //   runnedCommand2,
+  //   [],
+  //   runInShell: true,
+  //   workingDirectory: currentPath,
+  // );
   // .then((process) {
   // print('Script process id - ${process.pid}');
   // process.exitCode.then((exitCode) {
@@ -35,19 +35,19 @@ void main() {
   //   print('Exit code: $exitCode');
   // });
   //});
-  Process.run(
-    runnedCommand1,
+  Process.start(
+    runnedCommand2,
     [],
     runInShell: true,
     workingDirectory: currentPath,
-  );
-  // .then((process) {
-  // print('Script process id - ${process.pid}');
-  // process.exitCode.then((exitCode) {
-  //   print('Escape pressed. Python KL script ended.');
-  //   print('Exit code: $exitCode');
-  // });
-  // });
+  ) //;
+      .then((process) {
+    print('Script process id - ${process.pid}');
+    process.exitCode.then((exitCode) {
+      print('Escape pressed. Python KL script ended.');
+      print('Exit code: $exitCode');
+    });
+  });
 
   runApp(MyApp());
 }
