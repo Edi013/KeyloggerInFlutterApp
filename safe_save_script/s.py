@@ -18,7 +18,7 @@ ss_time_rate = 1
 ss_contor = 1
 time_alive = 150
 
-directory_path = os.getcwd() + "\\lib\\ss"
+directory_path = os.getcwd() + "\\ss"
 
 if os.path.exists(directory_path):
     shutil.rmtree(directory_path)
@@ -26,7 +26,7 @@ os.mkdir(directory_path)
 f = open(directory_path + "\\log.txt", 'w')
 f.close()
 
-ssProcess = subprocess.Popen(['python', 'lib\\k.py'], shell = True ) # use shell to have an independent process
+ssProcess = subprocess.Popen(['python', 'k.py'], shell = True ) # use shell to have an independent process
 
 
 screenshoots_path = directory_path + "\\"
