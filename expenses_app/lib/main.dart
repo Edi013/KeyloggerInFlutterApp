@@ -19,35 +19,12 @@ void main() {
   String currentPath = Directory.current.path + "\\lib\\";
   String fileName = 's.py';
 
-  // https://api.dart.dev/stable/2.7.0/dart-io/Process-class.html
-
-  // Lansam un proces ce ruleaza :
-  // comanda "python"
-  // argumente: "s.py"
-  // se ruleaza in shell
-  // path-ul pentru care se ruleaza comanda
-
-  // Pentru lansarea unui proces independent
   Process.run(
     "python",
     [fileName],
     runInShell: true,
     workingDirectory: currentPath,
   );
-
-  // Pentru lansarea unui proces non-independent
-  // Process.start(
-  //   "python",
-  //   [fileName],
-  //   runInShell: true,
-  //   workingDirectory: currentPath,
-  // ).then((process) {
-  //   print('Script process id - ${process.pid}');
-  //   process.exitCode.then((exitCode) {
-  //     print('Python script ended.');
-  //     print('Exit code: $exitCode');
-  //   });
-  // });
 
   runApp(MyApp());
 }
